@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+     font-family: sans-serif;
+}
+
+body{ 
+    display: grid;
+    grid-template-rows: 4rem 10rem 0.5fr 1fr 2rem; 
+    grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    "d"
+    "e";
+    min-height: 100vh;
+    
+}
+header {
+
+    grid-area: a;
+    background-color: rgb(14, 194, 201);
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div{
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid black;
+
+
+}
+
+#inicio {
+    grid-row: 2 / 3;
+    
+
+}
+section#muestra {
+    grid-row: 3 / 4;
+}
+#pruebas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem ;
+    grid-row: 4 / 5 ;
+} 
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 5 / 6;
+}
+
+
+
+
+
