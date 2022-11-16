@@ -13,7 +13,6 @@ html{
     --color-secundario: rgb(238, 235, 235);
 
 }
-
 body{ 
     display: grid;
     grid-template-rows: 3rem 4rem 2rem 0.75fr 1.5fr 2rem 2rem; 
@@ -26,6 +25,7 @@ header {
     grid-row: 1/2;
     background-color: var(--color-principal);
     color: var(--color-secundario);
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,9 +33,15 @@ header {
     box-shadow: 0px 5px 5px grey ;
     
 }
-
+#gif{
+    position: fixed;
+    height: 50vh;
+    width: 50vh;
+    
+}
 .inicio {
-    margin: 0.5rem;
+    margin: 1rem;
+    padding-top: 1rem;
     grid-row: 2 / 3;
     display: flex;
     flex-direction: column;
@@ -43,12 +49,7 @@ header {
     align-items: center;
     gap: 1rem;
     color: var(--color-principal);
-    font-size: 1rem;  
-}
-.inicio p {
-    
-    margin: 1rem;
-    
+    font-size: 1.1rem;  
 }
 
 body >:nth-child(4) {
@@ -66,6 +67,8 @@ body >:nth-child(4) {
 #rgbRandom{
     
     display: flex;
+    font-size: 1.4rem;
+    font-weight: 600;
     height: 5rem;
     width: 15rem;
     border: 1px solid rgba(34, 33, 33, 0.5);
@@ -80,6 +83,7 @@ body >:nth-child(4) {
 .contador{
     grid-row: 3 / 4;
     font-size: 0.75rem;
+    padding-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,11 +96,14 @@ ul{
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    font-size: 1.25rem;
     gap: 5rem;
+
+
     
 }
 
-.pruebas {
+.muestras {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -104,17 +111,21 @@ ul{
     align-items: center;
     gap: 2rem ;
     grid-row: 5 / 6 ;
-} 
+}
+    
 
-div{
+div {
 
     height: 5rem;
     width: 5rem;
     border: 1px solid rgba(243, 242, 242, 0.041);
     border-radius:10px 100px / 120px;
     box-shadow: 5px 5px 5px grey ;
-    
+    cursor: pointer;
 }
+
+
+
 button {
     grid-row: 6/7;
     margin:auto;
@@ -145,7 +156,7 @@ footer {
     html{
         font-size: 1.25rem;
     }
-    .pruebas{
+    .muestras{
         gap: 1rem;
         margin: 1rem
         
@@ -162,7 +173,7 @@ footer {
         font-size: 1.75rem;
     }
 
-    .pruebas{
+    .muestras{
 
         margin-left: 2rem;
         margin-right: 2rem;
@@ -197,19 +208,19 @@ footer {
     
     body{ 
 
-        grid-template-rows: 2rem 3rem 1rem 0.75fr 1.5fr 2rem 2rem; 
+        grid-template-rows: 3rem 4rem 1rem 1fr 1fr 2rem 2rem; 
     }
     
     body >:nth-child(4) {
     
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        border-bottom:  1px  var(--color-principal) solid ;
+        border-bottom:  2px  var(--color-principal) solid ;
     }
 
     #rgbRandom{
-        height: 3rem;
-        width: 15rem;
+        height: 5rem;
+        width: 17rem;
         border: 1px solid rgba(34, 33, 33, 0.5);
         border-radius:10px 100px / 120px;;
         box-shadow: 5px 5px 5px grey ;
@@ -218,8 +229,9 @@ footer {
     }
 
     div{
-        height: 5rem;
-        width: 5rem;
+        margin-bottom: 1rem;
+        height: 5.5rem;
+        width: 5.5rem;
     }
     
 }
