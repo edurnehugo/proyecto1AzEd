@@ -27,18 +27,10 @@ header {
     background-color: var(--color-principal);
     color: var(--color-secundario);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 0px 5px 5px grey ;
-    
-}
-
-div{
-    height: 5rem;
-    width: 5rem;
-    border: 1px solid rgba(243, 242, 242, 0.041);
-    border-radius:10px 100px / 120px;
-    box-shadow: 5px 5px 5px grey ;
     
 }
 
@@ -53,6 +45,11 @@ div{
     color: var(--color-principal);
     font-size: 1rem;  
 }
+.inicio p {
+    
+    margin: 1rem;
+    
+}
 
 body >:nth-child(4) {
     
@@ -63,7 +60,7 @@ body >:nth-child(4) {
     align-items: center;
     margin-bottom: 1rem;
     border-bottom:  1px  var(--color-principal) solid ;
-
+    
 }
 
 #rgbRandom{
@@ -96,7 +93,7 @@ ul{
     align-items: center;
     list-style-type: none;
     gap: 5rem;
-
+    
 }
 
 .pruebas {
@@ -109,30 +106,15 @@ ul{
     grid-row: 5 / 6 ;
 } 
 
-.pruebas :nth-child(1){
-    background-color: blue;
-}
-.pruebas :nth-child(2){
-    
-    background-color:limegreen;
-}
-.pruebas :nth-child(3){
-    
-    background-color:lightcoral;
-}
-.pruebas :nth-child(4){    
-    background-color:lightseagreen;
-}
+div{
 
-.pruebas :nth-child(5){
-   
-    background-color:rgb(152, 14, 194);
-}
-.pruebas :nth-child(6){
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid rgba(243, 242, 242, 0.041);
+    border-radius:10px 100px / 120px;
+    box-shadow: 5px 5px 5px grey ;
     
-    background-color:rgb(224, 204, 18);
 }
-
 button {
     grid-row: 6/7;
     margin:auto;
@@ -155,7 +137,6 @@ footer {
     justify-content: center;
     align-items: center;
     color: var(--color-principal);
-  
 
 }
 
