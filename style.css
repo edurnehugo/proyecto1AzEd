@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,900&family=Questrial&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +6,9 @@
 }
 html {
   font-family: Questrial, sans-serif;
-  --color-principal: rgb(3, 194, 105);
+  --color-principal: rgb(95, 197, 112);
   --shadow: 5px 5px 5px grey;
-  --color-secundario: rgb(238, 235, 235);
+  --color-secundario: rgb(238, 236, 234);
 }
 body {
   display: grid;

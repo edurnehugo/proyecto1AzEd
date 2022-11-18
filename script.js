@@ -12,7 +12,7 @@ let rgb;
 
 const fraseFinalGanar = [
   `"No más entrenamiento, requieres tú. Lo que necesitas, sabes ya."`,
-  `"¿Quieres saber la diferencia entre un maestro y un aprendiz? El maestro ha fallado más veces de las que el principiante lo ha intentado."`,
+  `"El maestro ha fallado más veces de las que el principiante lo ha intentado."`,
   `"¿Un aprendiz? Y ahora un Maestro eres tú, ¿verdad? De esta decisión, honesto debes ser."`,
   `"Que la fuerza te acompañe."`,
   `"Listo está, para enseñar a un aprendiz. Dejar ir a su alumno, un mayor reto será."`,
@@ -35,7 +35,7 @@ const fraseAciertos = [
   `"Si temeroso no estás, ya lo estarás."`,
   `"Las armas no ganan batallas. Tu mente, poderosa ella es."`,
   `"Te ha traído aquí, la galaxia te ha conducido. Tu camino es claro."`,
-  `"Elegir tú debes cómo responder a tus visiones. Pero, recuerda, el futuro siempre está en movimiento y muchos futuros posibles pueden suceder."`,
+  `"Recuerda, el futuro siempre está en movimiento y muchos futuros posibles pueden suceder."`,
 ];
 const fraseFallos = [
   `"Entrénate para dejar ir todo lo que temes perder."`,
@@ -112,8 +112,6 @@ function generadorColores() {
   rgbRandom.style.backgroundColor = obToRGB(target);
 }
 
-//rgbRandom.style.color = "rgb(238, 235, 235)";
-
 generadorColores();
 let textoFinal = document.querySelector(".inicio > p");
 
@@ -122,30 +120,30 @@ let fallos = document.querySelector("#fallos");
 
 aciertos.dataset.count = 0;
 fallos.dataset.count = 0;
-aciertos.textContent = `Aciertos: ${aciertos.dataset.count}`;
-fallos.textContent = `Fallos: ${fallos.dataset.count}`;
+aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
+fallos.textContent = `Sith's: ${fallos.dataset.count}`;
 
-//let gif = document.querySelector("#gif");
+let dibujo = document.querySelector("#dibujo");
 
 let divs = document.querySelectorAll("div");
 let end = false;
 
-function win() {
-  rgbRandom.textContent = `¡HAS GANADO!`;
+function ganar() {
+  rgbRandom.textContent = `¡GANADO HAS!`;
   textoFinal.textContent = `${
     fraseFinalGanar[Math.floor(Math.random() * fraseFinalGanar.length)]
   }`;
-  //textoFinal.style.color = "rgb(233, 96, 42)";
+
   end = true;
 }
 
-function loose() {
-  rgbRandom.textContent = `¡HAS PERDIDO!`;
+function perder() {
+  rgbRandom.textContent = `¡PERDIDO HAS!`;
   textoFinal.textContent = `${
     fraseFinalPerder[Math.floor(Math.random() * fraseFinalPerder.length)]
   }  `;
   //<img src="/imagenes/snow-white-9.gif">
-  // textoFinal.style.color = "rgb(233, 96, 42)";
+
   end = true;
 }
 
@@ -165,19 +163,18 @@ function handleDivClick(e) {
     textoFinal.textContent = `${
       fraseFallos[Math.floor(Math.random() * fraseFallos.length)]
     }`;
-    //textoFinal.style.color = "rgb(233, 96, 42)";
   }
 
   aciertos.textContent = `Aciertos: ${aciertos.dataset.count}`;
   fallos.textContent = `Fallos: ${fallos.dataset.count}`;
 
   if (aciertos.dataset.count === "3") {
-    win();
+    ganar();
     return;
   }
 
   if (fallos.dataset.count === "3") {
-    loose();
+    perder();
     return;
   }
 
