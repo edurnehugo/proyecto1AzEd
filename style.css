@@ -7,7 +7,7 @@
 }
 html {
   font-family: Questrial, sans-serif;
-  --color-principal: rgb(14, 194, 201);
+  --color-principal: rgb(3, 194, 105);
   --shadow: 5px 5px 5px grey;
   --color-secundario: rgb(238, 235, 235);
 }
