@@ -9,44 +9,43 @@ let color4 = document.querySelector("#color4");
 let color5 = document.querySelector("#color5");
 
 let rgb;
+
 const fraseFinalGanar = [
-  `No más entrenamiento, requieres tú. Lo que necesitas, sabes ya.`,
-  `¿Quieres saber la diferencia entre un maestro y un aprendiz? El maestro ha fallado más veces de las que el principiante lo ha intentado.`,
-  `¿Un aprendiz? Y ahora un Maestro eres tú, ¿verdad? De esta decisión, honesto debes ser.`,
-  `Elegir tú debes cómo responder a tus visiones. Pero, recuerda, el futuro siempre está en movimiento y muchos futuros posibles pueden suceder.`,
+  `"No más entrenamiento, requieres tú. Lo que necesitas, sabes ya."`,
+  `"¿Quieres saber la diferencia entre un maestro y un aprendiz? El maestro ha fallado más veces de las que el principiante lo ha intentado."`,
+  `"¿Un aprendiz? Y ahora un Maestro eres tú, ¿verdad? De esta decisión, honesto debes ser."`,
+  `"Que la fuerza te acompañe."`,
+  `"Listo está, para enseñar a un aprendiz. Dejar ir a su alumno, un mayor reto será."`,
+  `"Ya conoces tú todo lo que necesitas saber."`,
 ];
-console.log(fraseFinalGanar);
 
 const fraseFinalPerder = [
-  `Tan seguro estabas tú. Regresa y más cerca debes mirar.`,
-  `Entrénate para dejar ir todo lo que temes perder.`,
-  `Un misterio infinito la Fuerza es. Mucho por aprender aún queda.`,
-  `Perdido, sí, pero ¿qué es lo que está perdido? La cuestión, esa es.`,
-  `Reconocerás lo bueno de lo malo cuando estés en paz y tranquilo.`,
+  `"Tan seguro estabas tú. Regresa y más cerca debes mirar."`,
+  `"Entrénate para dejar ir todo lo que temes perder."`,
+  `"Un misterio infinito la Fuerza es. Mucho por aprender aún queda."`,
+  `"Perdido, sí, pero ¿qué es lo que está perdido? La cuestión, esa es."`,
+  `"Reconocerás lo bueno de lo malo cuando estés en paz y tranquilo."`,
+  `“Cuando mires al lado oscuro, cuidado debes tener… ya que el lado Oscuro te mira también.”`,
+  `“En toda forma de vida la fuerza reside. Usarla pueden.”`,
+  `"El mejor profesor, el fracaso es."`,
 ];
 
 const fraseAciertos = [
-  `Solo un Caballero Jedi completamente entrenado, con la Fuerza como su aliada, conquistará…`,
-  `Recuerda siempre, tu enfoque determina tu realidad.`,
-  `Listo está, para enseñar a un aprendiz. Dejar ir a su alumno, un mayor reto será.`,
-  `Verdaderamente maravillosa es la mente de un niño.`,
-  `Si temeroso no estás, ya lo estarás.`,
-  `Las armas no ganan batallas. Tu mente, poderosa ella es.`,
-  `Ya conoces tú todo lo que necesitas saber.`,
-  `Te ha traído aquí, la galaxia te ha conducido. Tu camino es claro.`,
-  ``,
+  `"Recuerda siempre, tu enfoque determina tu realidad."`,
+  `"Si temeroso no estás, ya lo estarás."`,
+  `"Las armas no ganan batallas. Tu mente, poderosa ella es."`,
+  `"Te ha traído aquí, la galaxia te ha conducido. Tu camino es claro."`,
+  `"Elegir tú debes cómo responder a tus visiones. Pero, recuerda, el futuro siempre está en movimiento y muchos futuros posibles pueden suceder."`,
 ];
 const fraseFallos = [
-  `Entrénate para dejar ir todo lo que temes perder.`,
-  `Lo aprendido debes desaprender.`,
-  `Imposible nada es. Difícil, muchas cosas son.`,
-  `Difícil de ver es. Siempre en movimiento el futuro está.`,
-  `En esta guerra, existe el peligro de perder quienes somos.`,
-  `No, no es diferente, solo es diferente en tu mente.`,
-  `El lado oscuro lo nubla todo. Imposible ver el futuro es.`,
-  `Si creer no puedes, es por eso que fallas.`,
-  `Paciencia debes tener, mi joven padawan.`,
-  `El mejor profesor, el fracaso es.`,
+  `"Entrénate para dejar ir todo lo que temes perder."`,
+  `"Lo aprendido debes desaprender."`,
+  `"Imposible nada es. Difícil, muchas cosas son."`,
+  `"Difícil de ver es. Siempre en movimiento el futuro está."`,
+  `"No, no es diferente, solo es diferente en tu mente."`,
+  `"El lado oscuro lo nubla todo. Imposible ver el futuro es."`,
+  `"Si creer no puedes, es por eso que fallas."`,
+  `"Paciencia debes tener, mi joven padawan."`,
 ];
 
 //Berto nos ha proporcionado esta función para poder usar el contraste de color para el texto de la muestra.
@@ -136,7 +135,7 @@ function win() {
   textoFinal.textContent = `${
     fraseFinalGanar[Math.floor(Math.random() * fraseFinalGanar.length)]
   }`;
-  textoFinal.style.color = "rgb(233, 96, 42)";
+  //textoFinal.style.color = "rgb(233, 96, 42)";
   end = true;
 }
 
@@ -146,7 +145,7 @@ function loose() {
     fraseFinalPerder[Math.floor(Math.random() * fraseFinalPerder.length)]
   }  `;
   //<img src="/imagenes/snow-white-9.gif">
-  textoFinal.style.color = "rgb(233, 96, 42)";
+  // textoFinal.style.color = "rgb(233, 96, 42)";
   end = true;
 }
 
@@ -160,13 +159,13 @@ function handleDivClick(e) {
       : aciertos.dataset.count++;
     textoFinal.textContent = `${
       fraseAciertos[Math.floor(Math.random() * fraseAciertos.length)]
-    }  `;
+    }`;
   } else {
     !fallos.dataset.count ? (fallos.dataset.count = 1) : fallos.dataset.count++;
     textoFinal.textContent = `${
       fraseFallos[Math.floor(Math.random() * fraseFallos.length)]
-    }  `;
-    textoFinal.style.color = "rgb(233, 96, 42)";
+    }`;
+    //textoFinal.style.color = "rgb(233, 96, 42)";
   }
 
   aciertos.textContent = `Aciertos: ${aciertos.dataset.count}`;
