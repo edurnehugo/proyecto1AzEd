@@ -54,8 +54,6 @@ const fraseFallos = [
 function getContrastColor({ r, g, b }) {
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
-  console.log(brightness);
-
   if (Math.abs(brightness - 255) > brightness) {
     return `var(--color-secundario)`;
   } else {
@@ -90,9 +88,9 @@ function generadorColores() {
   for (let i = 0; i < 6; i++) {
     coloresAleatorios.push({ r: r + rNum, g: g + gNum, b: b + bNum });
 
-    rNum += generateRandom(-10, 10);
-    gNum += generateRandom(-10, 10);
-    bNum += generateRandom(-10, 10);
+    rNum += generateRandom(10, 20);
+    gNum += generateRandom(10, 20);
+    bNum += generateRandom(10, 20);
   }
 
   console.log(coloresAleatorios);
@@ -129,7 +127,7 @@ let divs = document.querySelectorAll("div");
 let end = false;
 
 function ganar() {
-  rgbRandom.textContent = `¡GANADO HAS!`;
+  rgbRandom.textContent = `¡¿Jedi tu eres?!`;
   textoFinal.textContent = `${
     fraseFinalGanar[Math.floor(Math.random() * fraseFinalGanar.length)]
   }`;
@@ -138,7 +136,7 @@ function ganar() {
 }
 
 function perder() {
-  rgbRandom.textContent = `¡PERDIDO HAS!`;
+  rgbRandom.textContent = `¡El lado oscuro siento en ti!`;
   textoFinal.textContent = `${
     fraseFinalPerder[Math.floor(Math.random() * fraseFinalPerder.length)]
   }  `;
@@ -165,8 +163,8 @@ function handleDivClick(e) {
     }`;
   }
 
-  aciertos.textContent = `Aciertos: ${aciertos.dataset.count}`;
-  fallos.textContent = `Fallos: ${fallos.dataset.count}`;
+  aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
+  fallos.textContent = `Sith's: ${fallos.dataset.count}`;
 
   if (aciertos.dataset.count === "3") {
     ganar();
