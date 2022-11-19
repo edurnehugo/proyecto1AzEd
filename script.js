@@ -57,7 +57,7 @@ function getContrastColor({ r, g, b }) {
   if (Math.abs(brightness - 255) > brightness) {
     return `var(--color-secundario)`;
   } else {
-    return `var(--color-principal)`;
+    return `rgb(56, 90, 68)`;
   }
 }
 
@@ -88,9 +88,9 @@ function generadorColores() {
   for (let i = 0; i < 6; i++) {
     coloresAleatorios.push({ r: r + rNum, g: g + gNum, b: b + bNum });
 
-    rNum += generateRandom(10, 20);
-    gNum += generateRandom(10, 20);
-    bNum += generateRandom(10, 20);
+    rNum += generateRandom(-10, 10);
+    gNum += generateRandom(-10, 10);
+    bNum += generateRandom(-10, 10);
   }
 
   console.log(coloresAleatorios);
@@ -140,7 +140,6 @@ function perder() {
   textoFinal.textContent = `${
     fraseFinalPerder[Math.floor(Math.random() * fraseFinalPerder.length)]
   }  `;
-  //<img src="/imagenes/snow-white-9.gif">
 
   end = true;
 }
@@ -166,13 +165,23 @@ function handleDivClick(e) {
   aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
   fallos.textContent = `Sith's: ${fallos.dataset.count}`;
 
+  let imagenCierre = document.querySelector("#imagenFinal");
+  let imagen = document.createElement("img");
+
   if (aciertos.dataset.count === "3") {
     ganar();
+    imagen.src = "/imagenes-yoda/baby-yoda-feliz.png";
+    imagen.width = 400;
+    imagenCierre.appendChild(imagen);
+
     return;
   }
 
   if (fallos.dataset.count === "3") {
     perder();
+    imagen.src = "/imagenes-yoda/monster-382.png";
+    imagen.width = 400;
+    imagenCierre.appendChild(imagen);
     return;
   }
 

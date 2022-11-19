@@ -4,15 +4,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-family: Questrial, sans-serif;
   --color-principal: rgb(95, 197, 112);
   --shadow: 5px 5px 5px grey;
   --color-secundario: rgb(238, 236, 234);
 }
+
 body {
   display: grid;
-  grid-template-rows: 3rem 4rem 2rem 0.75fr 1.5fr 2rem 2rem;
+  grid-template-rows: 3rem 5rem 3rem 0.75fr 1.5fr 2rem 2rem;
   min-height: 100vh;
   background-color: var(--color-secundario);
 }
@@ -20,17 +22,12 @@ header {
   grid-row: 1/2;
   background-color: var(--color-principal);
   color: var(--color-secundario);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0px 5px 5px grey;
-}
-#gif {
-  position: fixed;
-  height: 50vh;
-  width: 50vh;
 }
 .inicio {
   margin: 1rem;
@@ -51,8 +48,8 @@ body > :nth-child(4) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
   border-bottom: 1px var(--color-principal) solid;
+  margin-bottom: 1rem;
 }
 
 #rgbRandom {
@@ -61,7 +58,7 @@ body > :nth-child(4) {
   font-weight: 600;
   height: 5rem;
   width: 16rem;
-  border: 1px solid rgba(34, 33, 33, 0.5);
+  border: 1px solid rgba(243, 242, 242, 0.041);
   border-radius: 10px 100px / 120px;
   box-shadow: 5px 5px 5px grey;
   justify-content: center;
@@ -74,6 +71,7 @@ body > :nth-child(4) {
   font-size: 0.75rem;
   padding-top: 1rem;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: var(--color-principal);
@@ -86,9 +84,12 @@ ul {
   align-items: center;
   list-style-type: none;
   font-size: 1.25rem;
-  gap: 5rem;
+  gap: 1rem;
 }
 
+#aciertos {
+  margin-right: 1.5rem;
+}
 .muestras {
   display: flex;
   flex-wrap: wrap;
@@ -135,6 +136,15 @@ footer {
   html {
     font-size: 1.25rem;
   }
+
+  li :nth-child(1) {
+    height: 2rem;
+  }
+
+  li :nth-child(3) {
+    height: 5rem;
+  }
+
   .muestras {
     gap: 1rem;
     margin: 1rem;
@@ -149,16 +159,13 @@ footer {
   html {
     font-size: 1.75rem;
   }
+  header img {
+    height: 1.75rem;
+  }
 
   .muestras {
     margin-left: 2rem;
     margin-right: 2rem;
-  }
-
-  div {
-    height: 6rem;
-    width: 6rem;
-    box-shadow: 7px 7px 7px grey;
   }
 
   #rgbRandom {
@@ -180,6 +187,9 @@ footer {
   body {
     grid-template-rows: 3rem 4rem 1rem 1fr 1fr 2rem 2rem;
   }
+  header img {
+    height: 1.75rem;
+  }
 
   body > :nth-child(4) {
     padding-top: 0.5rem;
@@ -188,7 +198,7 @@ footer {
   }
 
   #rgbRandom {
-    height: 5rem;
+    height: 6rem;
     width: 18rem;
     border: 1px solid rgba(34, 33, 33, 0.5);
     border-radius: 10px 100px / 120px;
@@ -199,7 +209,7 @@ footer {
 
   div {
     margin-bottom: 1rem;
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 8rem;
+    width: 8rem;
   }
 }
