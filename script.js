@@ -57,7 +57,7 @@ function getContrastColor({ r, g, b }) {
   if (Math.abs(brightness - 255) > brightness) {
     return `var(--color-secundario)`;
   } else {
-    return `rgb(56, 90, 68)`;
+    return `rgb(51, 156, 65)`;
   }
 }
 
@@ -88,9 +88,9 @@ function generadorColores() {
   for (let i = 0; i < 6; i++) {
     coloresAleatorios.push({ r: r + rNum, g: g + gNum, b: b + bNum });
 
-    rNum += generateRandom(-15, 15);
-    gNum += generateRandom(-15, 15);
-    bNum += generateRandom(-15, 15);
+    rNum += generateRandom(-20, 20);
+    gNum += generateRandom(-20, 20);
+    bNum += generateRandom(-20, 20);
   }
 
   color0.style.backgroundColor = obToRGB(coloresAleatorios[0]);
@@ -151,11 +151,14 @@ function handleDivClick(e) {
     textoFinal.textContent = `${
       fraseAciertos[Math.floor(Math.random() * fraseAciertos.length)]
     }`;
+    textoFinal.style.color = "rgb(17, 132, 226)";
   } else {
     !fallos.dataset.count ? (fallos.dataset.count = 1) : fallos.dataset.count++;
     textoFinal.textContent = `${
       fraseFallos[Math.floor(Math.random() * fraseFallos.length)]
     }`;
+
+    textoFinal.style.color = "rgb(240, 82, 20)";
   }
 
   aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
