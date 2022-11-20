@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,900&family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&family=Questrial&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +6,12 @@
 }
 
 html {
-  font-family: Questrial, sans-serif;
+  font-family: "Jockey One", Questrial, sans-serif;
   --color-principal: rgb(95, 197, 112);
-  --shadow: 5px 5px 5px grey;
   --color-secundario: rgb(238, 236, 234);
 }
 img {
-  filter: drop-shadow(3px 3px 3px var(--color-secundario));
+  filter: drop-shadow(3px 3px 3px rgb(238, 236, 234, 0.8));
 }
 
 body {
@@ -30,8 +29,8 @@ header {
   background-color: var(--color-principal);
   color: var(--color-secundario);
   font-size: 1.1rem;
-  box-shadow: 0px 5px 5px grey;
-  text-shadow: 1px 1px 2px rgb(216, 212, 212);
+  box-shadow: 0px 5px 5px rgb(94, 92, 92, 0.5);
+  text-shadow: 1px 1px 2px rgba(216, 212, 212, 0.5);
 }
 .inicio {
   grid-row: 2 / 3;
@@ -44,7 +43,7 @@ header {
   gap: 1rem;
   color: var(--color-principal);
   font-size: 1.3rem;
-  text-shadow: 1px 1px 2px rgb(187, 181, 181);
+  text-shadow: 1px 1px 2px rgb(187, 181, 181, 0.5);
 }
 
 .contador {
@@ -69,7 +68,7 @@ ul {
   gap: 1rem;
 }
 ul img {
-  filter: drop-shadow(3px 3px 3px rgb(102, 100, 100));
+  filter: drop-shadow(3px 3px 3px rgb(102, 100, 100, 0.5));
 }
 ul :nth-child(odd) {
   margin-right: -0.5rem;
@@ -88,12 +87,11 @@ body > :nth-child(4) {
 #rgbRandom {
   display: flex;
   font-size: 1.3rem;
-  font-weight: 600;
   height: 5rem;
   width: 16rem;
-  border: 1px solid rgba(243, 242, 242, 0.041);
+  border: 1px solid rgba(243, 242, 242, 0.1);
   border-radius: 10px 100px / 120px;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
   justify-content: center;
   align-items: center;
   color: var(--color-principal);
@@ -113,9 +111,9 @@ body > :nth-child(4) {
 div {
   height: 5rem;
   width: 5rem;
-  border: 1px solid rgba(243, 242, 242, 0.041);
+  border: 1px solid rgba(243, 242, 242, 0.1);
   border-radius: 10px 100px / 120px;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
   gap: 1rem;
   cursor: pointer;
 }
@@ -126,12 +124,13 @@ button {
   height: 2rem;
   width: 10rem;
   background-color: var(--color-principal);
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
   border-radius: 10px 100px / 120px;
-  color: white;
   text-shadow: 1px 1px 2px rgb(216, 212, 212);
   border: none;
   font-size: 0.75rem;
+  color: var(--color-secundario);
+  font-family: "Jockey One", Questrial, sans-serif;
   padding: 0.5rem 1rem;
 }
 
@@ -214,7 +213,7 @@ footer {
     height: 1.75rem;
   }
   ul {
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
   body > :nth-child(4) {
     padding-top: 1rem;

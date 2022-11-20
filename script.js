@@ -1,14 +1,4 @@
 "use strict";
-let rgbRandom = document.querySelector("#rgbRandom");
-
-let color0 = document.querySelector("#color0");
-let color1 = document.querySelector("#color1");
-let color2 = document.querySelector("#color2");
-let color3 = document.querySelector("#color3");
-let color4 = document.querySelector("#color4");
-let color5 = document.querySelector("#color5");
-
-let rgb;
 
 const fraseFinalGanar = [
   `"No más entrenamiento, requieres tú. Lo que necesitas, sabes ya."`,
@@ -65,7 +55,8 @@ function obToRGB({ r, g, b }) {
   return `rgb(${r},${g}, ${b})`;
 }
 
-function generateRandom(min = 0, max = 100) {
+//function generateRandom(min = 0, max = 100) {
+function generateRandom(min, max) {
   let difference = max - min;
   let rand = Math.random();
   rand = Math.floor(rand * difference);
@@ -73,6 +64,17 @@ function generateRandom(min = 0, max = 100) {
 
   return rand;
 }
+
+let rgbRandom = document.querySelector("#rgbRandom");
+
+let color0 = document.querySelector("#color0");
+let color1 = document.querySelector("#color1");
+let color2 = document.querySelector("#color2");
+let color3 = document.querySelector("#color3");
+let color4 = document.querySelector("#color4");
+let color5 = document.querySelector("#color5");
+
+let rgb;
 
 function generadorColores() {
   const coloresAleatorios = [];
@@ -88,9 +90,9 @@ function generadorColores() {
   for (let i = 0; i < 6; i++) {
     coloresAleatorios.push({ r: r + rNum, g: g + gNum, b: b + bNum });
 
-    rNum += generateRandom(-20, 20);
-    gNum += generateRandom(-20, 20);
-    bNum += generateRandom(-20, 20);
+    rNum += generateRandom(-10, 20);
+    gNum += generateRandom(-10, 20);
+    bNum += generateRandom(-10, 20);
   }
 
   color0.style.backgroundColor = obToRGB(coloresAleatorios[0]);
