@@ -88,12 +88,10 @@ function generadorColores() {
   for (let i = 0; i < 6; i++) {
     coloresAleatorios.push({ r: r + rNum, g: g + gNum, b: b + bNum });
 
-    rNum += generateRandom(-10, 10);
-    gNum += generateRandom(-10, 10);
-    bNum += generateRandom(-10, 10);
+    rNum += generateRandom(-15, 15);
+    gNum += generateRandom(-15, 15);
+    bNum += generateRandom(-15, 15);
   }
-
-  console.log(coloresAleatorios);
 
   color0.style.backgroundColor = obToRGB(coloresAleatorios[0]);
   color1.style.backgroundColor = obToRGB(coloresAleatorios[1]);
@@ -111,23 +109,21 @@ function generadorColores() {
 }
 
 generadorColores();
-let textoFinal = document.querySelector(".inicio > p");
 
 let aciertos = document.querySelector("#aciertos");
 let fallos = document.querySelector("#fallos");
+let textoFinal = document.querySelector(".inicio > p");
 
 aciertos.dataset.count = 0;
 fallos.dataset.count = 0;
 aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
 fallos.textContent = `Sith's: ${fallos.dataset.count}`;
 
-let dibujo = document.querySelector("#dibujo");
-
 let divs = document.querySelectorAll("div");
 let end = false;
 
 function ganar() {
-  rgbRandom.textContent = `¡¿Jedi tu eres?!`;
+  rgbRandom.textContent = `¡¿Jedi tú eres?!`;
   textoFinal.textContent = `${
     fraseFinalGanar[Math.floor(Math.random() * fraseFinalGanar.length)]
   }`;
@@ -165,26 +161,15 @@ function handleDivClick(e) {
   aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
   fallos.textContent = `Sith's: ${fallos.dataset.count}`;
 
-  let imagenCierre = document.querySelector("#imagenFinal");
-  let imagen = document.createElement("img");
-
   if (aciertos.dataset.count === "3") {
     ganar();
-    imagen.src = "/imagenes-yoda/baby-yoda-feliz.png";
-    imagen.width = 400;
-    imagenCierre.appendChild(imagen);
-
     return;
   }
 
   if (fallos.dataset.count === "3") {
     perder();
-    imagen.src = "/imagenes-yoda/monster-382.png";
-    imagen.width = 400;
-    imagenCierre.appendChild(imagen);
     return;
   }
-
   generadorColores();
 }
 

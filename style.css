@@ -11,6 +11,9 @@ html {
   --shadow: 5px 5px 5px grey;
   --color-secundario: rgb(238, 236, 234);
 }
+img {
+  filter: drop-shadow(3px 3px 3px var(--color-secundario));
+}
 
 body {
   display: grid;
@@ -18,28 +21,55 @@ body {
   min-height: 100vh;
   background-color: var(--color-secundario);
 }
+
 header {
   grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-principal);
   color: var(--color-secundario);
   font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   box-shadow: 0px 5px 5px grey;
 }
 .inicio {
-  margin: 1rem;
-  padding-top: 1rem;
   grid-row: 2 / 3;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  margin: 1rem;
+  padding-top: 1rem;
   gap: 1rem;
   color: var(--color-principal);
   font-size: 1.3rem;
+}
+
+.contador {
+  grid-row: 3 / 4;
+  font-size: 0.75rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-principal);
+  font-size: 1rem;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 1.25rem;
+  gap: 1rem;
+}
+ul img {
+  filter: drop-shadow(3px 3px 3px rgb(102, 100, 100));
+}
+ul :nth-child(odd) {
+  margin-right: -0.5rem;
 }
 
 body > :nth-child(4) {
@@ -66,35 +96,11 @@ body > :nth-child(4) {
   color: var(--color-principal);
 }
 
-.contador {
-  grid-row: 3 / 4;
-  font-size: 0.75rem;
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-principal);
-  font-size: 1rem;
-}
-
-ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  font-size: 1.25rem;
-  gap: 1rem;
-}
-
-#aciertos {
-  margin-right: 1.5rem;
-}
 .muestras {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   gap: 2rem;
   grid-row: 5 / 6;
@@ -106,6 +112,7 @@ div {
   border: 1px solid rgba(243, 242, 242, 0.041);
   border-radius: 10px 100px / 120px;
   box-shadow: 5px 5px 5px grey;
+  gap: 1rem;
   cursor: pointer;
 }
 
@@ -136,15 +143,15 @@ footer {
   html {
     font-size: 1.25rem;
   }
-
-  li :nth-child(1) {
-    height: 2rem;
+  #aciertos {
+    margin-right: -0.1rem;
   }
-
-  li :nth-child(3) {
-    height: 5rem;
+  ul :nth-child(1) img {
+    height: 2.4rem;
   }
-
+  ul :nth-child(3) img {
+    height: 3.8rem;
+  }
   .muestras {
     gap: 1rem;
     margin: 1rem;
@@ -155,61 +162,72 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 1.75rem;
-  }
-  header img {
-    height: 1.75rem;
-  }
-
-  .muestras {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-
-  #rgbRandom {
-    height: 5rem;
-    width: 16rem;
-  }
-}
-
-@media (min-width: 912px) {
-  html {
-    font-size: 2.3rem;
-  }
-}
-@media (min-width: 1024px) {
+@media (min-width: 540px) {
   html {
     font-size: 1.5rem;
   }
-
-  body {
-    grid-template-rows: 3rem 4rem 1rem 1fr 1fr 2rem 2rem;
-  }
+}
+@media (min-width: 648px) {
   header img {
-    height: 1.75rem;
+    height: 1.6rem;
+  }
+  #aciertos {
+    margin-right: 1rem;
+  }
+  li :nth-child(1) {
+    height: 3rem;
   }
 
-  body > :nth-child(4) {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px var(--color-principal) solid;
+  li :nth-child(3) {
+    height: 15rem;
   }
 
   #rgbRandom {
-    height: 6rem;
-    width: 18rem;
-    border: 1px solid rgba(34, 33, 33, 0.5);
-    border-radius: 10px 100px / 120px;
-    box-shadow: 5px 5px 5px grey;
-    justify-content: center;
-    align-items: center;
+    height: 4rem;
+    width: 16rem;
+  }
+  .muestras {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 820px) {
+  .muestras {
+    margin-left: 7rem;
+    margin-right: 7rem;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    grid-template-rows: 3rem 3rem 1rem 1fr 1fr 2rem 2rem;
   }
 
+  header img {
+    height: 1.75rem;
+  }
+  ul {
+    padding-top: 3rem;
+  }
+  body > :nth-child(4) {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px var(--color-principal) solid;
+  }
+  #rgbRandom {
+    height: 5rem;
+    width: 18rem;
+  }
+  .muestras {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    gap: 1rem;
+  }
   div {
     margin-bottom: 1rem;
-    height: 8rem;
-    width: 8rem;
+    height: 6rem;
+    width: 6rem;
   }
 }
