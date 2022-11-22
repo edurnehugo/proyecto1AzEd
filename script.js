@@ -39,8 +39,9 @@ const fraseFallos = [
 ];
 
 //Berto nos ha proporcionado esta función para poder usar el contraste de color para el texto de la muestra.
-//Tambien nos ha ayudado en mejorar el codigo que habiamos realizado.
+//Habiamos realizado el contador con switch pero Berto nos enseño lo mismo usando if
 
+///Funciones compleja para cambiar el color del texto y haga contraste con el backgroundColor
 function getContrastColor({ r, g, b }) {
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
@@ -55,7 +56,7 @@ function obToRGB({ r, g, b }) {
   return `rgb(${r},${g}, ${b})`;
 }
 
-//function generateRandom(min = 0, max = 100) {
+///Función para crear un rango aleatorio para sacar el resto de colores parecidos al principal
 function generateRandom(min, max) {
   let difference = max - min;
   let rand = Math.random();
@@ -76,6 +77,7 @@ let color5 = document.querySelector("#color5");
 
 let rgb;
 
+// función para generar el color random principal
 function generadorColores() {
   const coloresAleatorios = [];
 
@@ -102,28 +104,33 @@ function generadorColores() {
   color4.style.backgroundColor = obToRGB(coloresAleatorios[4]);
   color5.style.backgroundColor = obToRGB(coloresAleatorios[5]);
 
-  const target =
+  const color =
     coloresAleatorios[Math.floor(Math.random() * coloresAleatorios.length)];
 
-  rgbRandom.textContent = `${obToRGB(target)}`.toUpperCase();
-  rgbRandom.style.color = getContrastColor(target);
-  rgbRandom.style.backgroundColor = obToRGB(target);
+  rgbRandom.textContent = `${obToRGB(color)}`.toUpperCase();
+  rgbRandom.style.color = getContrastColor(color);
+  rgbRandom.style.backgroundColor = obToRGB(color);
 }
 
 generadorColores();
 
+let textoFinal = document.querySelector(".inicio > p");
+
+textoFinal.innerHTML = `Acertar tres veces puedes y errar esa cantidad no debes, si ganar al
+lado oscuro tú quieres.`;
+textoFinal.style.color = "var(--color-principal)";
+
 let aciertos = document.querySelector("#aciertos");
 let fallos = document.querySelector("#fallos");
-let textoFinal = document.querySelector(".inicio > p");
 
 aciertos.dataset.count = 0;
 fallos.dataset.count = 0;
 aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
 fallos.textContent = `Sith's: ${fallos.dataset.count}`;
 
-let divs = document.querySelectorAll("div");
 let end = false;
 
+//// función final de ganar
 function ganar() {
   rgbRandom.textContent = `¡¿Jedi tú eres?!`;
   textoFinal.textContent = `${
@@ -133,6 +140,7 @@ function ganar() {
   end = true;
 }
 
+//// función final de perder
 function perder() {
   rgbRandom.textContent = `¡El lado oscuro siento en ti!`;
   textoFinal.textContent = `${
@@ -141,6 +149,9 @@ function perder() {
 
   end = true;
 }
+
+//Función para contador de fallos y aciertos
+let divs = document.querySelectorAll("div");
 
 function handleDivClick(e) {
   let div = e.target;
@@ -182,8 +193,6 @@ for (const div of divs) {
   div.addEventListener("click", handleDivClick);
 }
 
+///Función de reinicio
 let button = document.querySelector("button");
-function buttonClickHandler() {
-  location.reload();
-}
-button.addEventListener("click", buttonClickHandler);
+button.addEventListener("click", () => location.reload());
