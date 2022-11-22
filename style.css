@@ -118,6 +118,7 @@ div {
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
   gap: 1rem;
   cursor: pointer;
+  user-select: none;
 }
 
 button {

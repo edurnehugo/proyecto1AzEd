@@ -115,11 +115,6 @@ function generadorColores() {
 generadorColores();
 
 let textoFinal = document.querySelector(".inicio > p");
-
-textoFinal.innerHTML = `Acertar tres veces puedes y errar esa cantidad no debes, si ganar al
-lado oscuro tú quieres.`;
-textoFinal.style.color = "var(--color-principal)";
-
 let aciertos = document.querySelector("#aciertos");
 let fallos = document.querySelector("#fallos");
 
@@ -189,10 +184,23 @@ function handleDivClick(e) {
   generadorColores();
 }
 
-for (const div of divs) {
-  div.addEventListener("click", handleDivClick);
+function reiniciar() {
+  end = false;
+  aciertos.dataset.count = 0;
+  fallos.dataset.count = 0;
+  aciertos.textContent = `Jedi's: ${aciertos.dataset.count}`;
+  fallos.textContent = `Sith's: ${fallos.dataset.count}`;
+  textoFinal.textContent = `Acertar tres veces puedes y errar esa cantidad no debes, si ganar al
+  lado oscuro tú quieres.`;
+  textoFinal.style.color = `var(--color-principal)`;
+
+  generadorColores();
 }
 
 ///Función de reinicio
 let button = document.querySelector("button");
 button.addEventListener("click", () => location.reload());
+
+for (const div of divs) {
+  div.addEventListener("click", handleDivClick);
+}
